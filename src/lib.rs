@@ -13,13 +13,12 @@ struct Output {
 
 #[no_mangle]
 fn prepare_impl(_input: Input) {
-    oei::ask_external_data(1, 86, "GOLD".as_bytes());
+    return
 }
 
 #[no_mangle]
-fn execute_impl(input: Input) -> Output {
-    let result: f64 = ext::stats::majority(ext::load_input(1).collect()).unwrap();
-    Output { price: (result * input.multiplier as f64) as u64 }
+fn execute_impl(_input: Input) -> Output {
+    loop {}
 }
 
 prepare_entry_point!(prepare_impl);
